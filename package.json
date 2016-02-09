@@ -1,0 +1,27 @@
+{
+  "name": "switch-match",
+  "version": "0.0.0",
+  "description": "Better object matching",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava",
+    "coverage": "nyc ava && nyc report --reporter=text-lcov | coveralls"
+  },
+  "keywords": [
+    "switch",
+    "match",
+    "object"
+  ],
+  "author": "canvaskisa <canvaskisa@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canvaskisa/switch-match.git"
+  },
+  "devDependencies": {
+    "ava": "^0.11.0",
+    "coveralls": "^2.11.6",
+    "nyc": "^5.6.0",
+    "xo": "^0.12.1"
+  }
+}
