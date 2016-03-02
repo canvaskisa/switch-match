@@ -17,23 +17,23 @@ var a = match('value', {
 	_: 0
 });
 
-a === 1 // true, matches provided value
+a === 1; // true, matches provided value
 
 var b = match('nth', {
 	value: 1,
 	_: 0
 });
 
-b === 0 // true, matches default _ value
+b === 0; // true, matches default _ value
 
 var c = match('fn', {
 	fn: function(val) {
-		return 1;
+		return val;
 	},
 	_: 0
 });
 
-c === 1 // true, calls function with matched value and returns it's result
+c === 'fn'; // true, calls function with matched value and returns it's result
 ```
 
 ## Related

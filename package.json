@@ -1,6 +1,6 @@
 {
   "name": "switch-match",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Better object matching",
   "main": "index.js",
   "scripts": {
