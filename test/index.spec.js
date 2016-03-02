@@ -1,23 +1,42 @@
 import test from 'ava';
 import match from '../index.js';
+import {spy} from 'sinon';
 
-test.cb('It matches objects key', t => {
-	const value = 'test';
-	match(value, {
-		test: v => {
-			t.same(v, value);
-			t.end();
-		}
+test('Must match and return object\'s key', t => {
+	const expected = [1];
+	const actual = match('value', {
+		a: 'test',
+		value: expected
 	});
+
+	t.is(actual, expected, '');
 });
 
-test.cb('It calls default value', t => {
-	const value = 'test';
-	match(value, {
-		hello: v => console.log(v),
-		_: v => {
-			t.same(v, value);
-			t.end();
-		}
+test('Must return default value if nothing matched', t => {
+	const expected = {a: 1};
+	const actual = match('nothing', {
+		value: 1,
+		_: expected
 	});
+
+	t.is(actual, expected);
+});
+
+test('Must throw error if nothing matched with no default value', t => {
+	t.throws(() => match('nothing', {
+		a: 'a',
+		b: 'b'
+	}), 'Switch-match: default `_` key was called, but was not provided');
+});
+
+test('Must call matched value if it is a function', t => {
+	const fn = spy();
+	match('test', {test: fn});
+	t.is(fn.calledOnce, true);
+});
+
+test('Must call default value if nothing matched and it is a function', t => {
+	const fn = spy();
+	match('nothing', {_: fn});
+	t.is(fn.calledOnce, true);
 });
