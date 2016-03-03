@@ -1,5 +1,5 @@
 import test from 'ava';
-import match from '../index.js';
+import match, {errorMessage} from '../index.js';
 import {spy} from 'sinon';
 
 test('Must match and return object\'s key', t => {
@@ -26,7 +26,7 @@ test('Must throw error if nothing matched with no default value', t => {
 	t.throws(() => match('nothing', {
 		a: 'a',
 		b: 'b'
-	}), 'Switch-match: default `_` key was called, but was not provided');
+	}), errorMessage);
 });
 
 test('Must call matched value if it is a function', t => {
