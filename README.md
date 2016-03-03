@@ -6,6 +6,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 > :flashlight: Better object matching.
+
 ## Installation
 ```console
 $ npm i -S switch-match
