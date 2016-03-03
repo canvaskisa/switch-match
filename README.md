@@ -5,7 +5,7 @@
 [![Dependencies Status](https://david-dm.org/canvaskisa/switch-match.svg)](https://david-dm.org/canvaskisa/switch-match)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-> :flashlight: Better object matching.
+>:flashlight: Better object matching.
 
 ## Installation
 ```console
@@ -13,7 +13,7 @@ $ npm i -S switch-match
 ```
 
 ## Usage
-Pass the `value` to match as the fisrt argument and the `object` to match as the second argument. Also you need to provide `_` default value, it will be returned if nothing else matched. Is you provide a `function` as a value, it will be called with matched `key` and it's result will be returned.
+Pass the `value` to match as the first argument and the `object` to match as the second argument. Also you need to provide `_` default value, it will be returned if nothing else matched. If you provide a `function` as a value, it will be called with matched `key` and it's result will be returned.
 ```js
 var match = require('switch-match');
 
