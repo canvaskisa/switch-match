@@ -1,5 +1,5 @@
 import test from 'ava';
-import match, {errorMessage} from '../index.js';
+import match from '../index.js';
 import {spy} from 'sinon';
 
 test('Must match and return object\'s key', t => {
@@ -15,18 +15,10 @@ test('Must match and return object\'s key', t => {
 test('Must return default value if nothing matched', t => {
 	const expected = {a: 1};
 	const actual = match('nothing', {
-		value: 1,
-		_: expected
-	});
+		value: 1
+	}, expected);
 
 	t.is(actual, expected);
-});
-
-test('Must throw error if nothing matched with no default value', t => {
-	t.throws(() => match('nothing', {
-		a: 'a',
-		b: 'b'
-	}), errorMessage);
 });
 
 test('Must call matched value if it is a function', t => {
@@ -37,6 +29,12 @@ test('Must call matched value if it is a function', t => {
 
 test('Must call default value if nothing matched and it is a function', t => {
 	const fn = spy();
-	match('nothing', {_: fn});
+	match('nothing', {}, fn);
 	t.is(fn.calledOnce, true);
+});
+
+test('Must return undefined if default matched with no value', t => {
+	const expected = undefined;
+	const actual = match('wat', {test: 1});
+	t.is(actual, expected);
 });
