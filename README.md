@@ -38,7 +38,7 @@ match('fn', {
     return val;
   },
   y: 1
-}); // => 'fn', function's call result (`val`) 
+}); // => 'fn', function's call result (val) 
 ```
 
 Personally, i wrote this module for usage with `redux` and `es6`, it fits pretty nice, but you can use it wherever you want to:
