@@ -12,7 +12,7 @@ $ npm i -S switch-match
 
 ## Usage
 >```js
-match(val: string, obj: object, default: any): any
+match(val: string, obj: object, def: any): any
 ```
 
 ```js
