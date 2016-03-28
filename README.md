@@ -3,7 +3,7 @@
 [![Travis Build Status](https://travis-ci.org/canvaskisa/switch-match.svg)](https://travis-ci.org/canvaskisa/switch-match)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-> Better object matching.
+> Better object matching
 
 ## Installation
 ```console
