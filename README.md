@@ -11,9 +11,10 @@ $ npm i -S switch-match
 ```
 
 ## Usage
->```js
+```js
 match(val: string, obj: object, def: any): any
 ```
+---
 
 ```js
 var match = require('switch-match');
