@@ -1,1 +1,9 @@
+node_modules
+npm-debug.log
+*.swp
+coverage
+.nyc_output
 test
+.editoconfig
+.gitattributes
+.travis.yml
