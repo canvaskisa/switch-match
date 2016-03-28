@@ -31,14 +31,14 @@ match('none', {
 match('none-without-default', {
   x: 2,
   y: 1
-}); // Undefined
+}); // => undefined
 
 match('fn', {
   fn: function(val) {
     return val;
   },
   y: 1
-}); // => 'fn', function's return value
+}); // => 'fn', function's call result (`val`) 
 ```
 
 Personally, i wrote this module for usage with `redux` and `es6`, it fits pretty nice, but you can use it wherever you want to:
