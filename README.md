@@ -1,10 +1,9 @@
 # Switch-match
 [![NPM version](http://img.shields.io/npm/v/switch-match.svg)](https://www.npmjs.org/package/switch-match)
 [![Travis Build Status](https://travis-ci.org/canvaskisa/switch-match.svg)](https://travis-ci.org/canvaskisa/switch-match)
-[![Dependencies Status](https://david-dm.org/canvaskisa/switch-match.svg)](https://david-dm.org/canvaskisa/switch-match)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
->:flashlight: Better object matching.
+> Better object matching.
 
 ## Installation
 ```console
@@ -12,7 +11,10 @@ $ npm i -S switch-match
 ```
 
 ## Usage
-Pass the `value` to match as the first argument and the `object` to match as the second argument. If you provide a `function` as a value, it will be called with matched `key` and it's result will be returned.
+>```js
+match(val: string, obj: object, default: any): any
+```
+
 ```js
 var match = require('switch-match');
 
@@ -41,9 +43,8 @@ match('fn', {
 
 Personally, i wrote this module for usage with `redux` and `es6`, it fits pretty nice, but you can use it wherever you want to:
 ```js
-export default (state = Immutable.Map, action) => match(action.type, {
-  [FETCH_POSTS]: () => state.merge({posts: action.posts}),
-  [OPEN_POPUP]: () => state.set('isPopupOpen', true)
+export default (state = {}, action) => match(action.type, {
+  [FETCH_POSTS]: () => ({...state, posts: action.posts})
 }, state);
 ```
 

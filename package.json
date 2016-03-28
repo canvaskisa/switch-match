@@ -12,7 +12,7 @@
     "match",
     "object"
   ],
-  "author": "canvaskisa <canvaskisa@gmail.com>",
+  "author": "Aleksandr Yakunichev '<canvaskisa@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,12 +20,9 @@
   },
   "devDependencies": {
     "ava": "^0.13.0",
-    "nyc": "^6.0.0",
+    "nyc": "^6.1.1",
     "sinon": "^1.17.3",
     "xo": "^0.13.0"
-  },
-  "dependencies": {
-    "lodash": "^4.6.1"
   },
   "nyc": {
     "lines": 100,
